@@ -47,7 +47,7 @@ const Hero = () => {
                     </div>
                 {/* </div> */}
 
-                <motion.h6 className="text-white font-bol text-[12px] md:text-[16px] md:w-[60%] lg:w-[35%] leading-[18px] md:leading-[25px]"
+                <motion.h6 className="text-white font-bol text-[12px] md:text-[16px] md:w-[60%] lg:w-[55% leading-[18px] md:leading-[25px]"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 1.7 }}
