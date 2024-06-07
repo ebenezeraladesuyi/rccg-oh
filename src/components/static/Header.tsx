@@ -37,28 +37,25 @@ const Header = () => {
 
                 <div className='lg:bg-whit lg:bg-opacity-4 rounded-[30px] lg:shadow-m py-1 p-3'>
                     <li className="hidden lg:flex items-center gap-7 text-[15px] transition-all duration-500 ease-in-out">
-                        <NavLink to="/">
-                            <ol className='text-[#fbfbfb] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b'>Home</ol>
-                        </NavLink>
+                        <div className='flex items-center gap-7 bg-white px-4 py-2 rounded-[15px] shadow-md'>
+                            <NavLink to="/">
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Home</ol>
+                            </NavLink>
 
-                        
-                        <NavLink to="aboutus">
-                            <ol className='text-[#fbfbfb] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b'>What We Belief</ol>
-                        </NavLink>
+                            
+                            <NavLink to="aboutus">
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>What We Belief</ol>
+                            </NavLink>
 
-                        {/* <Link offset={-100} smooth={true} duration={500} to="services"> */}
-                        {/* <NavLink to='/'>
-                            <ol className='text-[#063e60] hover:text-[#23a1db] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Departments</ol>
-                        </NavLink> */}
+                            <NavLink to='/'>
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Newsletters</ol>
+                            </NavLink>
 
-                        <NavLink to='/'>
-                            <ol className='text-[#fbfbfb] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b'>Newsletters</ol>
-                        </NavLink>
-
-                        {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
-                        <NavLink to='/contact'>
-                            <ol className='text-[#fbfbfb] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b'>Contact Us</ol>
-                        </NavLink>
+                            {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
+                            <NavLink to='/contact'>
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Contact Us</ol>
+                            </NavLink>
+                        </div>
 
                         <NavLink to="/">
                             <button className=' px-5 py-2 bg-[#28166f] hover:text-[#fbfbfb] hover:border-[#fbfbfb] hover:bg-transparent text-white font-semibold animate-puls ml-[50px] rounded-[60px] transition-all duration-300 ease-in-out hover:px- hover:py- animate-bounce'>

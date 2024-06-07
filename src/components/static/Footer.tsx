@@ -30,8 +30,8 @@ const Footer = () => {
             </h5> 
           </div>
 
-          <div className="flex flex-col gap-3 text-[11px] md:text-[14px] text-[#28166f]">
-            <h6 className="cursor-pointr mb-[0px] text-[16px] md:text-[18px] font-bold md:mt-[20px] text-[#33a866]">Service Schedule</h6>
+          <div className="flex flex-col gap-3 text-[11px] md:text-[12px] text-[#28166f]">
+            <h6 className="cursor-pointr mb-[0px] text-[14px] md:text-[16px] lg:text-[18px] font-bold md:mt-[20px text-[#33a866]">Service Schedule</h6>
             <h6 className="cursor-pointr">Sunday School <span>9:30am</span></h6>
             <h6 className="cursor-pointr">Sunday Service <span>10:00am - 12:00Noon</span></h6>
             <h6 className="cursor-pointr">Tuesday: Digging Deep/Faith Clinic<span>7:00pm - 9:00pm</span></h6>
@@ -71,8 +71,8 @@ const Footer = () => {
 
       </div>
 
-      <div className="bg-[#23a1db] py-5 w-full flex items-center justify-center z-20">
-        <h5 className="text-[12px] md:text-[15px] text-white mt-[30px w-[90%] ">
+      <div className="bg-[#28166f] py-5 w-full flex items-center justify-center z-20">
+        <h5 className="text-[12px] md:text-[15px] text-white mt-[30px w-[90%] text-center">
           Copyright &#169; 2024 RCCG OPEN HEAVENS, DUBLIN
         </h5>
       </div>

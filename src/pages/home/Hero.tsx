@@ -15,7 +15,7 @@ const Hero = () => {
 
         <div className="w-[90%] h-full z-30 text-white flex flex-col gap-4 justify-center items-center md:items-start mt-[60px] md:mt-[100px]">
 
-            <motion.h5 className='text-[17px] text-center md:text-left tracking-[7px] md:text-[16px] font-bold lg:text-[22px] md:tracking-[9px] text-[#23a1db] bg-white w-[250px] lg:w-[300px] p-1 rounded-[20px] flex justify-center items-center'
+            <motion.h5 className='text-[17px] text-center md:text-left tracking-[7px] md:text-[16px] font-bold lg:text-[22px] md:tracking-[9px] text-[#28166f] bg-white w-[250px] lg:w-[300px] p-1 rounded-[20px] flex justify-center items-center'
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
