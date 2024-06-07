@@ -16,6 +16,7 @@ export default {
         'prayer-bg2' : "url('/src/assets/images/3Q6A5576.jpg')",
         'prayer-bg3' : "url('/src/assets/images/3Q6A5656.jpg')",
         'footer-bg3' : "url('/src/assets/images/city.jpg')",
+        'missionbg' : "url('/src/assets/gif/missonBg.gif')",
         // 'bg2' : "url('/src/assets/images/bg2.jpg')",
       }
     },

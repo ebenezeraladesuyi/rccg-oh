@@ -44,11 +44,15 @@ const Header = () => {
 
                             
                             <NavLink to="aboutus">
-                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>What We Belief</ol>
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>About</ol>
                             </NavLink>
 
                             <NavLink to='/'>
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Newsletters</ol>
+                            </NavLink>
+
+                            <NavLink to='/'>
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Gallery</ol>
                             </NavLink>
 
                             {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
@@ -97,16 +101,15 @@ const Header = () => {
                         </NavLink>
 
                         <NavLink to="/">
-                            <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>What We Belief</ol>
-                        </NavLink>
-
-                        {/* <Link  offset={-100} smooth={true} duration={500} to="services">
-                        {/* <NavLink to='/'> */}
-                            {/* <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Departments</ol> */}
-                        {/* </Link> */} 
+                            <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>About</ol>
+                        </NavLink> 
 
                         <NavLink to='/'>
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>NewsLetters</ol>
+                        </NavLink>
+
+                        <NavLink to='/'>
+                            <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Gallery</ol>
                         </NavLink>
 
                         {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}

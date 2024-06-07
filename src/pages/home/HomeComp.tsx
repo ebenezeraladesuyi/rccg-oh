@@ -2,6 +2,8 @@
 
 // import Hero from "./Hero"
 import HeroPage from "./HeroPage"
+import HomeGallery from "./HomeGallery"
+import Mission from "./Mission"
 import Prayer from "./Prayer"
 
 const HomeComp = () => {
@@ -9,6 +11,8 @@ const HomeComp = () => {
     <div>
         <HeroPage />
         <Prayer />
+        <Mission />
+        <HomeGallery />
     </div>
   )
 }
