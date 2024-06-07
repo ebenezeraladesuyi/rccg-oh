@@ -12,7 +12,10 @@ export default {
       },
       backgroundImage: {
         'hero-bg' : "url('/src/assets/images/10.png')",
-        // 'mobile-bg' : "url('/src/assets/images/vol-mobile-bg.avif')",
+        'prayer-bg1' : "url('/src/assets/images/3Q6A5433.jpg')",
+        'prayer-bg2' : "url('/src/assets/images/3Q6A5576.jpg')",
+        'prayer-bg3' : "url('/src/assets/images/3Q6A5656.jpg')",
+        'footer-bg3' : "url('/src/assets/images/city.jpg')",
         // 'bg2' : "url('/src/assets/images/bg2.jpg')",
       }
     },

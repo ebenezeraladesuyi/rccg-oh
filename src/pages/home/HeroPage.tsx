@@ -88,7 +88,7 @@ const HeroPage: React.FC = () => {
                 </motion.h6>
             </div>
 
-            <motion.button className="w-[150px] md:w-[200px] py-2 bg-[#23a1db] text-white rounded-lg text-[15px] md:text-[18px] animate-pulse"
+            <motion.button className="w-[150px] md:w-[200px] py-2 bg-[#4cb278] text-white rounded-lg text-[15px] md:text-[18px] animate-pulse"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.9 }}
