@@ -1,6 +1,7 @@
 // import React from 'react'
 
 // import Reveal from "../../animations/Reveal";
+import { NavLink } from "react-router-dom";
 import RevealMap from "../../animations/RevealMap";
 import { PrayerCard } from "../../components";
 
@@ -15,14 +16,14 @@ const Prayer = () => {
 
                     <div className="text-[#1515157e]"></div>
 
-                    {/* <NavLink to="/contact"> */}
+                    <NavLink to="/contact">
                         <div className="mb-[20px] z-20">
                             <PrayerCard 
                                 content="Share your Testimony with us"
                                 buttonContent="Share With Us"
                             />
                         </div>
-                    {/* </NavLink> */}
+                    </NavLink>
 
                 </div>
             </RevealMap>
@@ -35,14 +36,14 @@ const Prayer = () => {
 
                     <div className="text-[#1515157e]"></div>
 
-                    {/* <NavLink to="/contact"> */}
+                    <NavLink to="/contact">
                         <div className="mb-[20px] z-20">
                             <PrayerCard 
                                 content="Want to send a Prayer Request?"
                                 buttonContent="Send Prayer Request"
                             />
                         </div>
-                    {/* </NavLink> */}
+                    </NavLink>
 
                 </div> 
             </RevealMap>

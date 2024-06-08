@@ -13,7 +13,7 @@ const Believe = () => {
                 Ready to Begin A New Experience with Christ?
             </h6>
 
-            <NavLink to="/">
+            <NavLink to="/contact">
                 <a href="" className="p-2 px-5 bg-[#23a1db] text-white rounded-[20px] animate-bounce">Become A Believer</a>
             </NavLink>
         </div>

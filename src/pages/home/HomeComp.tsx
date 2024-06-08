@@ -6,6 +6,7 @@ import Blog from "./Blog"
 import HeroPage from "./HeroPage"
 import HomeGallery from "./HomeGallery"
 import Prayer from "./Prayer"
+import Service from "./Service"
 
 const HomeComp = () => {
   return (
@@ -15,6 +16,7 @@ const HomeComp = () => {
         <HomeGallery />
         <Believe />
         <Blog />
+        <Service />
     </div>
   )
 }

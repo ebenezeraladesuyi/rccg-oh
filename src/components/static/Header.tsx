@@ -5,6 +5,7 @@ import { MdClose } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 // import { Link } from "react-scroll";
 import {motion}  from "framer-motion";
+import "./Header.css"
 
 const Header = () => {
 
@@ -62,7 +63,7 @@ const Header = () => {
                         </div>
 
                         <NavLink to="/">
-                            <button className=' px-5 py-2 bg-[#28166f] hover:text-[#fbfbfb] hover:border-[#fbfbfb] hover:bg-transparent text-white font-semibold animate-puls ml-[50px] rounded-[60px] transition-all duration-300 ease-in-out hover:px- hover:py- animate-bounce'>
+                            <button className=' px-5 py-2 bg-[#28166f] hover:text-[#fbfbfb] border-[#28166f] hover:bg-transparent text-white font-semibold animate-puls ml-[50px] rounded-[60px] transition-all duration-300 ease-in-out hover:px- hover:py- animate-bounce border-[1px] css-button-sliding-to-left--sky'>
                                 Give Online
                             </button>
                         </NavLink>
