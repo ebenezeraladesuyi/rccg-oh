@@ -57,11 +57,11 @@ const HomeGallery = () => {
     }
 
   return (
-    <div className="w-full flex justify-center items-center py-[30px]">
+    <div className="w-full flex justify-center items-center py-[30px] overflow-hidden">
         <div className="w-[90%] flex flex-col gap-5">
 
             <div className="w-full text-[12px] flex items-center justify-between  text-[#28166f]">
-                <h5 className="font-bold md:text-[18px] lg:text-[22px] ">Our Gallery</h5>
+                <h5 className="font-bold text-[14px] md:text-[18px] lg:text-[22px] ">Our Gallery</h5>
 
                 <h6 className="flex gap-2 items-center hover:text-orange-400 cursor-pointer animate-bounce">View More Pictures <span><FaArrowRightLong /></span></h6>
             </div>

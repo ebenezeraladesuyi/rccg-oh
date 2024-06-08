@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import { BallTriangle } from "react-loader-spinner";
+import { Circles } from "react-loader-spinner";
 // import logo from "../../assets/images/logo.png"
 
 const IsLoading = () => {
@@ -12,17 +12,17 @@ const IsLoading = () => {
 
         {/* <img src={logo} className="w-[80px]" alt="Logo" /> */}
 
-        <BallTriangle
-            height={100}
-            width={100}
-            radius={5}
+        
+          <Circles
+            height="80"
+            width="80"
             color="#f9f9fd"
-            ariaLabel="ball-triangle-loading"
+            ariaLabel="circles-loading"
             wrapperStyle={{}}
             wrapperClass=""
             visible={true}
-          />
-
+            />
+            
         <i style={{fontSize:"17px", color:"#f9f9fd", marginTop:"30px"}}>Loading...</i>
 
     </div>

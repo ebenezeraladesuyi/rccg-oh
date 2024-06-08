@@ -1,9 +1,10 @@
 // import React from 'react'
 
 // import Hero from "./Hero"
+import Believe from "./Believe"
+import Blog from "./Blog"
 import HeroPage from "./HeroPage"
 import HomeGallery from "./HomeGallery"
-import Mission from "./Mission"
 import Prayer from "./Prayer"
 
 const HomeComp = () => {
@@ -11,8 +12,9 @@ const HomeComp = () => {
     <div>
         <HeroPage />
         <Prayer />
-        <Mission />
         <HomeGallery />
+        <Believe />
+        <Blog />
     </div>
   )
 }

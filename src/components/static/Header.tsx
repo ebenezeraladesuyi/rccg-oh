@@ -117,7 +117,7 @@ const Header = () => {
                             <ol className='text-white  hover:text-[#eedfb0s] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Contact Us</ol>
                         </NavLink>
 
-                        <NavLink to="/becomeamember">
+                        <NavLink to="/">
                             <button className='w-[150px bg-[#80c41c] border-none hover:bg-[#3d82b3] text-white font-semibold animate-pulse  rounded-[60px]'>
                                 Give Online
                             </button>
