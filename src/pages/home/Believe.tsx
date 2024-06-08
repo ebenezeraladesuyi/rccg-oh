@@ -1,10 +1,12 @@
 // import React from 'react'
 
 import { NavLink } from "react-router-dom";
+import RevealMap from "../../animations/RevealMap";
 
 const Believe = () => {
   return (
-    <div className="w-full h-[60vh] md:h-[50vh] flex flex-col justify-center items-center bg-be bg-center bg-cover relative font-pop bg-prayer-bg2 text-white overflow-hidden">
+    <RevealMap>
+      <div className="w-full h-[60vh] md:h-[50vh] flex flex-col justify-center items-center bg-be bg-center bg-cover relative font-pop bg-prayer-bg2 text-white overflow-hidden">
 
         <div  className="absolute w-full h-full bg-black top-0 left-0 opacity-60"></div>
 
@@ -19,7 +21,8 @@ const Believe = () => {
         </div>
 
         <h6 className="text-center text-[13px] md:text-[18px] lg:text-[20px] text-[#28166f] font-bold z-20 mt-[30px] bg-white p-2 px-3 rounded-[25px] w-[90%]">"Jesus Christ is the same yesterday, today and forever" Heb 13:8</h6>
-    </div>
+      </div>
+    </RevealMap>
   )
 }
 
