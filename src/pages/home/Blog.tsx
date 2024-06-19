@@ -60,7 +60,7 @@ const Blog = () => {
             <div className="w-full text-[10px] md:text-[12px] flex items-center justify-between  text-[#28166f]">
                 <h5 className="font-bold text-[14px] md:text-[18px] lg:text-[22px] ">Blogs & NewLetters</h5>
 
-                <NavLink to="/" >
+                <NavLink to="/allblogs" >
                     <div className="flex gap-2 items-center hover:text-orange-400 cursor-pointer animate-bounce text-[#28166f]">
                         <h6 className="">See all Blogs & NewsLetters</h6>
                         <div className="hidden md:block"><FaArrowRightLong /></div>

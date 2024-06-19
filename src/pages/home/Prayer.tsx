@@ -9,6 +9,7 @@ const Prayer = () => {
   return (
     <div className="w-full flex justify-center items-center py-[30px]  bg-white">
         <div className="w-[90%] flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
+            
             <RevealMap className={`w-full md:w-[48%]`}>
                 <div className="w-ful md:w-[50% h-[290px] bg-prayer-bg3  bg-center bg-cover shadow-md relative rounded-md flex flex-col justify-between overflow-hidden">
 

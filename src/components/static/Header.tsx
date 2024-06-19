@@ -52,8 +52,12 @@ const Header = () => {
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Newsletters</ol>
                             </NavLink>
 
-                            <NavLink to='/'>
+                            <NavLink to='/gallery'>
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Gallery</ol>
+                            </NavLink>
+
+                            <NavLink to='/'>
+                                <ol className='text-[#28166f] hover:text-[#040404 cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>First Timers</ol>
                             </NavLink>
 
                             {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
@@ -109,8 +113,12 @@ const Header = () => {
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>NewsLetters</ol>
                         </NavLink>
 
-                        <NavLink to='/'>
+                        <NavLink to='/gallery'>
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Gallery</ol>
+                        </NavLink>
+
+                        <NavLink to='/'>
+                            <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>First Timer</ol>
                         </NavLink>
 
                         {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
