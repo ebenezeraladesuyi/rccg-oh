@@ -1,15 +1,18 @@
-// import React from 'react'
-
+import React, { useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import BlogCard from "../../components/block/BlogCard";
 import { FaArrowRightLong } from "react-icons/fa6";
-import img1 from "../../assets/blog/Joseph_PotipharsWife-1.jpg";
-import img2 from "../../assets/blog/Beautiful_woman_prayer.jpg";
-import img3 from "../../assets/blog/PeoplePraying-768x420.jpg";
-import img4 from "../../assets/blog/Jesus-is-Calling1-768x480.jpg";
+// import img1 from "../../assets/blog/Joseph_PotipharsWife-1.jpg";
+// import img2 from "../../assets/blog/Beautiful_woman_prayer.jpg";
+// import img3 from "../../assets/blog/PeoplePraying-768x420.jpg";
+// import img4 from "../../assets/blog/Jesus-is-Calling1-768x480.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { iBlog } from '../../types/interface';
+import axios from 'axios';
+import { url } from '../../api/Api';
+import { DatasIsaLoading } from '../isLoading/DataIsLoading';
 
 const Blog = () => {
     
@@ -52,6 +55,41 @@ const Blog = () => {
         ]
     }
 
+    const [allBlogs, setAllBlogs] = React.useState<iBlog[]>([]);
+    const [isLoading, setIsLoading] = React.useState(false);
+
+
+    // fetch all blogs
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            setIsLoading(true);
+            try {
+                const response = await axios.get(`${url}/blog/allblogs`);
+                const sortedBlogs = response.data && response.data.sort((a: iBlog, b: iBlog) => {
+                    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+                });
+
+                setAllBlogs(sortedBlogs);
+
+                setIsLoading(false)
+            } catch (error) {
+                console.error("error getting all blogs:", error)
+
+                setIsLoading(false);
+            }
+        };
+
+        fetchBlogs()
+    }, []);
+
+    if (isLoading) {
+        return 
+            <div className='w-full flex justify-center items-center'>
+                <DatasIsaLoading />
+            </div>
+    }
+
+    const firstFiveBlogs = allBlogs.slice(0, 5);
 
   return (
     <div className="w-full bg-white flex justify-center items-center py-[30px] overflow-hidden">
@@ -70,46 +108,18 @@ const Blog = () => {
 
            <div className="w-full fle justify-between items-center"> 
                 <Slider {...settings}>
-
-                <div className=" shadow-m rounded-m overflow-hidde ">
-                    <BlogCard 
-                        pic={img1}
-                        author="TMC"
-                        title="Overcoming Temptation"
-                        details="Just as we cannot stop birds from flying over our heads but can stop them from nesting in our hair, so also can we not stop temptation from coming. However, we…"
-                        date="November 23, 2020"
-                    />
-                </div>
-
-                <div className=" shadow-m rounded-md overflow-hidde ">
-                    <BlogCard 
-                        pic={img2}
-                        author="TMC"
-                        title="The Lord's Prayer"
-                        details="INTRODUCTION Many people misunderstand the Lord’s prayer to be a prayer that we are to repeat word for word. It has been memorised by countless people throughout history and is…"
-                        date="November 07, 2020"
-                    />
-                </div>
-
-                <div className=" shadow-m rounded-md overflow-hidde ">
-                    <BlogCard 
-                        pic={img3}
-                        author="TMC"
-                        title="The Power Of A Praying Church"
-                        details="REASONS AND CONDITIONS The church employs prayer to make effective the word, the name, and the Spirit of God in fulfilling her divine mandate (Acts 2:42). God listens to the…"
-                        date="November 03, 2020"
-                    />
-                </div>
-
-                <div className=" shadow-m rounded-md overflow-hidd  ">
-                    <BlogCard 
-                        pic={img4}
-                        author="TMC"
-                        title="Why You Should Be Saved"
-                        details="Looking around and admiring the wonders of nature, animals, plants, food crops, birds, fishes all existing in their kinds and the rich diversity of the universe one can't help but…"
-                        date="October 24, 2020"
-                    />
-                </div>
+                
+                {firstFiveBlogs && firstFiveBlogs.map((blog: iBlog) => (
+                    <div key={blog._id} className=" shadow-m rounded-m overflow-hidde ">
+                        <BlogCard 
+                            pic={blog.blogImage}
+                            author={blog.author}
+                            title={blog.title.toUpperCase()}
+                            details={blog.details.slice(0, 174)}
+                            date={blog.createdAt.slice(0, 10)}
+                        />
+                    </div>
+                ))}
 
                 </Slider>
             </div>

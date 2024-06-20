@@ -2,6 +2,7 @@
 import React from 'react';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { NavLink } from 'react-router-dom';
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 interface iBlogCard {
     pic? : any;
@@ -24,23 +25,24 @@ const BlogCard:React.FC<iBlogCard> = ({pic, author, title, details, date}) => {
                 {author}
             </h6>
 
-            <h5 className='text-[14px] font-bold'>
+            <h5 className='text-[13px] font-bold'>
                 {/* Why You Should Be Saved */}
                 {title}
             </h5>
 
             <h6 className='text-[10px] text-justify'>
                 {/* Looking around and admiring the wonders of nature, animals, plants, food crops, birds, fishes all existing in their kinds and the rich diversity of the universe one can't help but… */}
-                {details}
+                {details}...
             </h6>
 
             <div className='flex items-center justify-between'>
-                <h5 className='text-[10px]'>
+                <h5 className='text-[10px] flex items-center gap-1'>
                     {/* October 24, 2020 */}
+                    <span><FaRegCalendarCheck /></span>
                     {date}
                 </h5>
 
-                <NavLink to="">
+                <NavLink to="/allblogs">
                     <h5 className='text-[10px] flex items-center gap-2 text-[#33a866]'>Read More <span><FaArrowRightLong /></span></h5>
                 </NavLink>
             </div>
