@@ -29,7 +29,7 @@ export interface iContact {
 
 export interface iGallery {
     _id: string;
-    gacImage : string;
+    rccgGallImage : string;
     createdAt : any;
 }
 

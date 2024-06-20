@@ -28,7 +28,7 @@ const Gallery = () => {
             return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
         });
         setAllImages(sortedImages);
-        
+
         console.log(sortedImages)
 
         setLoading(false);
@@ -71,7 +71,7 @@ const Gallery = () => {
             <div className="w-[90%] flex flex-wrap justify-center md:justify-between items-center gap-2">
             {currentImages && currentImages.map((image : iGallery) => (
             <div key={image._id} className="w-full h-[185px] md:w-[32.5%] lg:w-[24%] shadow-md">
-                <img className="w-full h-full" src={image.gacImage} alt="" />
+                <img className="w-full h-full" src={image.rccgGallImage} alt="" />
             </div>
             ))}
             </div>

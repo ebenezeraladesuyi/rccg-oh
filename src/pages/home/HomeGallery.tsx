@@ -94,6 +94,8 @@ const HomeGallery = () => {
         </div>
   }
 
+  const firstFiveImages = allGallery.slice(0, 5);
+
   return (
     <div className="w-full flex justify-center items-center py-[30px] overflow-hidden">
         <div className="w-[90%] flex flex-col gap-5">
@@ -108,10 +110,10 @@ const HomeGallery = () => {
 
             <div className="w-full">
                 <Slider {...settings}>
-                    {allGallery && allGallery.map((image: iGallery) => (
+                    {firstFiveImages && firstFiveImages.map((image: iGallery) => (
                         <div className="w-[290px] h-[190px] shadow-md overflow-hidden">
                             <HomeGalleryCard 
-                                pic={image?.gacImage}
+                                pic={image?.rccgGallImage}
                             />
                         </div>
                     ))}
