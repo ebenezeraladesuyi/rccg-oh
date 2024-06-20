@@ -129,7 +129,7 @@ const Contact = () => {
             <option value="Prayer Request">Prayer Request</option>
           </select>
 
-          <input className="w-full h-[43px] px-3 rounded-md outline-none text-[12px] lg:text-[15px] border-[1px] border-[#433482]" type="text" id="" placeholder="firstName" 
+          <input className="w-full h-[43px] px-3 rounded-md outline-none text-[12px] lg:text-[15px] border-[1px] border-[#433482]" type="text" id="" placeholder="FirstName" 
           name='firstName' value={formData.firstName} onChange={handleChange}
           />
 
