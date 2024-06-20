@@ -48,12 +48,12 @@ const Header = () => {
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>About</ol>
                             </NavLink>
 
-                            <NavLink to='/'>
-                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Newsletters</ol>
-                            </NavLink>
-
                             <NavLink to='/gallery'>
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Gallery</ol>
+                            </NavLink>
+
+                            <NavLink to='/allblogs'>
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Blog</ol>
                             </NavLink>
 
                             <NavLink to='/'>
@@ -109,12 +109,12 @@ const Header = () => {
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>About</ol>
                         </NavLink> 
 
-                        <NavLink to='/'>
-                            <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>NewsLetters</ol>
-                        </NavLink>
-
                         <NavLink to='/gallery'>
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Gallery</ol>
+                        </NavLink>
+
+                        <NavLink to='/allblogs'>
+                            <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Blog</ol>
                         </NavLink>
 
                         <NavLink to='/'>

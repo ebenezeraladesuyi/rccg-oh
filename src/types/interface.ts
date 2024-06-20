@@ -20,13 +20,24 @@ export interface iMember {
 
 export interface iContact {
     reason: string;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
+    phoneNumber: string;
     message: string;
 }
 
 export interface iGallery {
     _id: string;
     gacImage : string;
+    createdAt : any;
+}
+
+export interface iBlog {
+    _id: string,
+    blogImage : string;
+    author: string;
+    title: string;
+    details: string;
     createdAt : any;
 }

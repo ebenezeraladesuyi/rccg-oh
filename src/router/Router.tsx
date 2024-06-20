@@ -6,12 +6,12 @@ import ContactLayout from "../layout/ContactLayout";
 import Contact from "../pages/contact/Contact";
 import GalleryLayout from "../layout/GalleryLayout";
 import AllBlogLayout from "../layout/AllBlogLayout";
-import OneBlog from "../pages/oneBlog/OneBlog";
 
 
 const HomeComp = lazy(() => import("../pages/home/HomeComp"));
 const Gallery = lazy(() => import("../pages/gallery/Gallery"));
 const AllBlogs = lazy(() => import("../pages/allBlog/AllBlogs"));
+const OneBlog = lazy(() => import("../pages/oneBlog/OneBlog"));
 
 
 export const element = createBrowserRouter([
@@ -54,7 +54,7 @@ export const element = createBrowserRouter([
                 element: <AllBlogs />
             },
             {
-                path: "oneblog",
+                path: "oneblog/:id",
                 element: <OneBlog />
             }
         ]
