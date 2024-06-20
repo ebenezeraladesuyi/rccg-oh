@@ -9,13 +9,20 @@ export interface iAudio {
     audioUrl? : string;
 }
 
-export interface iMember {
+export interface iFirstTimer {
+    _id?: string;
     name: string;
-    phoneNumber: string;
-    email: string;
-    when: string;
-    how : string;
-    why: string;
+    address: string;
+    county: string;
+    occupation: string;
+    telHome : string;
+    telWork : string;
+    mobile : string;
+    email : string;
+    visitOrStay : string;
+    prayerRequest : string;
+    haveJesus : string;
+    pastorVisit : boolean;
 }
 
 export interface iContact {

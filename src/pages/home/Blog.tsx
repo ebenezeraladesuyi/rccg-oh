@@ -82,12 +82,12 @@ const Blog = () => {
         fetchBlogs()
     }, []);
 
-    if (isLoading) {
-        return 
-            <div className='w-full flex justify-center items-center'>
-                <DatasIsaLoading />
-            </div>
-    }
+    // if (isLoading) {
+    //     return 
+    //         <div className='w-full flex justify-center items-center'>
+    //             <DatasIsaLoading />
+    //         </div>
+    // }
 
     const firstFiveBlogs = allBlogs.slice(0, 5);
 
@@ -107,21 +107,27 @@ const Blog = () => {
             </div>
 
            <div className="w-full fle justify-between items-center"> 
-                <Slider {...settings}>
-                
-                {firstFiveBlogs && firstFiveBlogs.map((blog: iBlog) => (
-                    <div key={blog._id} className=" shadow-m rounded-m overflow-hidde ">
-                        <BlogCard 
-                            pic={blog.blogImage}
-                            author={blog.author}
-                            title={blog.title.toUpperCase()}
-                            details={blog.details.slice(0, 174)}
-                            date={blog.createdAt.slice(0, 10)}
-                        />
+                {isLoading ? ( 
+                    <div className='w-full flex justify-center items-center'>
+                        <DatasIsaLoading />
                     </div>
-                ))}
+                ) : (
+                    <Slider {...settings}>
+                    
+                    {firstFiveBlogs && firstFiveBlogs.map((blog: iBlog) => (
+                        <div key={blog._id} className=" shadow-m rounded-m overflow-hidde ">
+                            <BlogCard 
+                                pic={blog.blogImage}
+                                author={blog.author}
+                                title={blog.title.toUpperCase()}
+                                details={blog.details.slice(0, 174)}
+                                date={blog.createdAt.slice(0, 10)}
+                            />
+                        </div>
+                    ))}
 
-                </Slider>
+                    </Slider>
+                )}
             </div>
 
         </div>

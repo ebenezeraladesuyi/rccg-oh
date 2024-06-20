@@ -87,12 +87,12 @@ const HomeGallery = () => {
     fetchImages();
   }, []);
 
-  if (loading) {
-    return  
-        <div className="w-full flex justify-center items-center">
-            <DatasIsaLoading />
-        </div>
-  }
+//   if (loading) {
+//     return  
+//         <div className="w-full flex justify-center items-center">
+//             <DatasIsaLoading />
+//         </div>
+//   }
 
   const firstFiveImages = allGallery.slice(0, 5);
 
@@ -109,15 +109,21 @@ const HomeGallery = () => {
             </div>
 
             <div className="w-full">
-                <Slider {...settings}>
-                    {firstFiveImages && firstFiveImages.map((image: iGallery) => (
-                        <div className="w-[290px] h-[190px] shadow-md overflow-hidden">
-                            <HomeGalleryCard 
-                                pic={image?.rccgGallImage}
-                            />
-                        </div>
-                    ))}
-                </Slider>
+                { loading ? (
+                    <div className="w-full flex justify-center items-center">
+                        <DatasIsaLoading />
+                    </div>
+                ) : (
+                    <Slider {...settings}>
+                        {firstFiveImages && firstFiveImages.map((image: iGallery) => (
+                            <div className="w-[290px] h-[190px] shadow-md overflow-hidden">
+                                <HomeGalleryCard 
+                                    pic={image?.rccgGallImage}
+                                />
+                            </div>
+                        ))}
+                    </Slider>
+                )}
             </div>
         </div>
     </div>
