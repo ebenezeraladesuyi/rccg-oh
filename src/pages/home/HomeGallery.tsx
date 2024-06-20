@@ -102,7 +102,7 @@ const HomeGallery = () => {
                 <h5 className="font-bold text-[14px] md:text-[18px] lg:text-[22px] ">Our Gallery</h5>
 
                 <NavLink to="/gallery">
-                    <h6 className="flex gap-2 items-center hover:text-orange-400 cursor-pointer animate-bounce">View More Pictures <span><FaArrowRightLong /></span></h6>
+                    <h6 className="flex gap-2 items-center hover:text-orange-400 cursor-pointer animate-bounce">View Gallery <span><FaArrowRightLong /></span></h6>
                 </NavLink>
             </div>
 
