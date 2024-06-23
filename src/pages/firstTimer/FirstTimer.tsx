@@ -20,7 +20,7 @@ const FirstTimer = () => {
         visitOrStay : '',
         prayerRequest : '',
         haveJesus : '',
-        pastorVisit : false,
+        pastorVisit : '',
     });
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState<string | null>(null)
@@ -46,7 +46,7 @@ const FirstTimer = () => {
                 visitOrStay : '',
                 prayerRequest : '',
                 haveJesus : '',
-                pastorVisit : false,
+                pastorVisit : '',
             });
             setError(null);
 
@@ -66,24 +66,29 @@ const FirstTimer = () => {
         };
 
         
-        const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-            const { name, value, type } = e.target;
+        // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        //     const { name, value, type } = e.target;
         
-            // Use type assertion to tell TypeScript this is an HTMLInputElement
-            if (type === 'checkbox') {
-                const isChecked = (e.target as HTMLInputElement).checked; // Cast to HTMLInputElement to access 'checked'
-                setFormData(prevState => ({
-                    ...prevState,
-                    [name]: isChecked, // Assign boolean value directly for checkboxes
-                }));
-            } else {
-                // For other input types, handle normally
-                setFormData(prevState => ({
-                    ...prevState,
-                    [name]: value, // Assign value for other input types
-                }));
-            }
-        };
+        //     // Use type assertion to tell TypeScript this is an HTMLInputElement
+        //     if (type === 'checkbox') {
+        //         const isChecked = (e.target as HTMLInputElement).checked; // Cast to HTMLInputElement to access 'checked'
+        //         setFormData(prevState => ({
+        //             ...prevState,
+        //             [name]: isChecked, // Assign boolean value directly for checkboxes
+        //         }));
+        //     } else {
+        //         // For other input types, handle normally
+        //         setFormData(prevState => ({
+        //             ...prevState,
+        //             [name]: value, // Assign value for other input types
+        //         }));
+        //     }
+        // };
+
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
         
 
   return (
@@ -191,12 +196,24 @@ const FirstTimer = () => {
 
                 </div>
 
-                <div className="flex items-center gap-1">
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="" className="text-[12px] md:text-[14px] text-[#33a866]">Would you want a Pastor/Counsellor to visit you?</label>
+                    <select className="w-full h-[43px] px-3 rounded-md outline-none text-[12px] md:text-[13px] shadow-lg"
+                        name='pastorVisit' value={formData.pastorVisit} onChange={handleChange}
+                        >
+                            <option value="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                    </select>
+
+                </div>
+
+                {/* <div className="flex items-center gap-1">
                     <input type="checkbox" className="w-[17px] h-[17px] border-none outline-none hover:border-none text-[11px] md:text-[13px] rounded-md"  
                     name="pastorVisit" checked={formData.pastorVisit} onChange={handleChange}
                     />
                     <label htmlFor="" className="text-[10px] md:text-[13px] text-[#33a866]">Would you want a Pastor/Counsellor to visit you?</label>
-                </div>
+                </div> */}
 
                 { loading ? (
                     <div className='w-full flex items-center justify-center'>
