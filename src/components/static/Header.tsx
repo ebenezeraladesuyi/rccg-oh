@@ -44,7 +44,7 @@ const Header = () => {
                             </NavLink>
 
                             
-                            <NavLink to="/">
+                            <NavLink to="/about">
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>About</ol>
                             </NavLink>
 
@@ -105,7 +105,7 @@ const Header = () => {
                             <ol className='text-white hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Home</ol>
                         </NavLink>
 
-                        <NavLink to="/">
+                        <NavLink to="/about">
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>About</ol>
                         </NavLink> 
 
