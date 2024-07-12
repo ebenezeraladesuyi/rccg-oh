@@ -8,6 +8,7 @@ import GalleryLayout from "../layout/GalleryLayout";
 import AllBlogLayout from "../layout/AllBlogLayout";
 import FirstTimerLayout from "../layout/FirstTimerLayout";
 import AboutLayout from "../layout/AboutLayout";
+import PaymentLayout from "../layout/PaymentLayout";
 
 const HomeComp = lazy(() => import("../pages/home/HomeComp"));
 const Gallery = lazy(() => import("../pages/gallery/Gallery"));
@@ -15,6 +16,7 @@ const AllBlogs = lazy(() => import("../pages/allBlog/AllBlogs"));
 const OneBlog = lazy(() => import("../pages/oneBlog/OneBlog"));
 const FirstTimer = lazy(() => import("../pages/firstTimer/FirstTimer"));
 const AboutComp = lazy(() => import("../pages/about/AboutComp"));
+const Payment = lazy(() => import("../pages/payment/Payment"));
 
 
 export const element = createBrowserRouter([
@@ -79,6 +81,16 @@ export const element = createBrowserRouter([
             {
                 index: true,
                 element: <AboutComp />
+            }
+        ]
+    },
+    {
+        path:"/payment",
+        element: <PaymentLayout />,
+        children: [
+            {
+                index: true,
+                element: <Payment />
             }
         ]
     },

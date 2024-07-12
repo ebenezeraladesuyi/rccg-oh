@@ -66,9 +66,9 @@ const Header = () => {
                             </NavLink>
                         </div>
 
-                        <NavLink to="/">
+                        <NavLink to="/payment">
                             <button className=' px-5 py-2 bg-[#28166f] hover:text-[#fbfbfb] border-[#28166f] hover:bg-transparent text-white font-semibold animate-puls ml-[50px] rounded-[60px] transition-all duration-300 ease-in-out hover:px- hover:py- animate-bounce border-[1px] css-button-sliding-to-left--sky'>
-                                Give Online
+                                Giving
                             </button>
                         </NavLink>
                     </li>
@@ -126,9 +126,9 @@ const Header = () => {
                             <ol className='text-white  hover:text-[#eedfb0s] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Contact Us</ol>
                         </NavLink>
 
-                        <NavLink to="/">
+                        <NavLink to="/payment">
                             <button className='w-[150px bg-[#80c41c] border-none hover:bg-[#3d82b3] text-white font-semibold animate-pulse  rounded-[60px]'>
-                                Give Online
+                                Giving
                             </button>
                         </NavLink>
                     {/* </li> */}
