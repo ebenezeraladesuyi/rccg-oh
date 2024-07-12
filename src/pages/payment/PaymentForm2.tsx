@@ -56,7 +56,7 @@ const PaymentForm2: React.FC = () => {
 
         toast.error(error.message ?? 'An error occurred')
       } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-        console.log('Payment succeeded:', paymentIntent);
+        // console.log('Payment succeeded:', paymentIntent);
         // Handle successful payment here, e.g., show success message to user
         toast.success('Payment successfull.')
         setAmount(0);
