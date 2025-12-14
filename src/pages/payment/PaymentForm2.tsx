@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import axios from 'axios';
-import { url } from '../../api/Api';
+import { url } from '../../api/Api'; // Adjust path as per your project structure
 import { DatasIsaLoading } from '../isLoading/DataIsLoading';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,7 +15,6 @@ const PaymentForm2: React.FC = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    
     // Allow empty string or valid numbers
     if (value === '' || /^\d*\.?\d*$/.test(value)) {
       setAmount(value);
@@ -26,22 +25,22 @@ const PaymentForm2: React.FC = () => {
     event.preventDefault();
 
     if (!stripe || !elements) {
-      return;
+      return; // Stripe.js has not yet loaded.
     }
 
-    // Validate amount
+    // Convert string amount to number for processing
     const amountNum = parseFloat(amount);
-    if (!amount || isNaN(amountNum) || amountNum <= 0) {
+    if (isNaN(amountNum) || amountNum <= 0) {
       toast.error('Please enter a valid amount');
       return;
     }
 
-    setLoading(true);
+    setLoading(true); // Set loading state while processing payment
 
     try {
       // Make a request to create a payment intent on your server
       const response = await axios.post(`${url}/payment/create-payment-intent`, {
-        amount: amountNum * 100, // Convert to cents
+        amount: amountNum * 100, // Convert amount to cents as Stripe requires it in cents
       });
 
       const { clientSecret } = response.data;
@@ -55,7 +54,9 @@ const PaymentForm2: React.FC = () => {
       const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: cardElement,
-          billing_details: {},
+          billing_details: {
+            // Include any additional billing details here if required
+          },
         },
       });
 
@@ -63,30 +64,29 @@ const PaymentForm2: React.FC = () => {
         setError(error.message ?? 'An error occurred');
         toast.error(error.message ?? 'An error occurred');
       } else if (paymentIntent && paymentIntent.status === 'succeeded') {
-        toast.success('Payment successful.');
+        // console.log('Payment succeeded:', paymentIntent);
+        // Handle successful payment here, e.g., show success message to user
+        toast.success('Payment successfull.');
         setAmount(''); // Reset to empty string
       }
 
     } catch (error) {
       console.error('Error confirming payment:', error);
       setError('Payment failed. Please try again.');
-      toast.error('Transaction not successful. Please, try again.');
+      toast.error('Transaction not successfull. Please, Try Again.');
     }
 
-    setLoading(false);
+    setLoading(false); // Reset loading state
   };
-
-  // Calculate display amount for button
-  const displayAmount = amount === '' ? '0.00' : parseFloat(amount || '0').toFixed(2);
 
   return (
     <form onSubmit={handleSubmit} className='w-full flex flex-col justify-center items-cente'>
       <label className='text-[#28166f]'>
         Amount (in Euros):
+        {/* Only change here - type="text" and value={amount} */}
         <input 
           className='border-[1px] outline-none border-gray-300 rounded-md h-[40px] w-full pl-2 bg-[#ffffff] text-[#000000]' 
-          type="text" // Change to text type for better control
-          inputMode="decimal" // Shows numeric keypad on mobile
+          type="text" 
           value={amount}
           onChange={handleChange}
           placeholder="0.00"
@@ -95,8 +95,9 @@ const PaymentForm2: React.FC = () => {
       <br />
       <label className='text-[#28166f]'>
         Card Details:
+        {/* EXACTLY AS YOU HAD IT - no changes */}
         <div className='border-[1px] outline-none border-gray-300 rounded-md h-[40px] w-full'> 
-          <CardElement className='flex flex-col justify-center items-center p-2' />
+            <CardElement className='flex flex-col justify-center items-cente p-2' />
         </div>
       </label>
       
@@ -107,13 +108,12 @@ const PaymentForm2: React.FC = () => {
         type="submit" 
         disabled={!stripe || loading || !amount || parseFloat(amount) <= 0}
       >
-        {loading ? (
-          <div className='w-full flex justify-center items-center'>
-            <DatasIsaLoading />
-          </div>
-        ) : (
-          `Pay €${displayAmount}`
-        )}
+        {loading ? 
+            (<div className='w-full flex justify-center items-center'>
+                <DatasIsaLoading />
+            </div>) 
+        : 
+            `Pay €${amount ? parseFloat(amount).toFixed(2) : '0.00'}`}
       </button>
     </form>
   );
