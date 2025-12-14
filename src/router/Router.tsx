@@ -9,6 +9,8 @@ import AllBlogLayout from "../layout/AllBlogLayout";
 import FirstTimerLayout from "../layout/FirstTimerLayout";
 import AboutLayout from "../layout/AboutLayout";
 import PaymentLayout from "../layout/PaymentLayout";
+import CsrLayout from "../layout/CsrLayout";
+import CSR from "../pages/CSR/CSR";
 
 const HomeComp = lazy(() => import("../pages/home/HomeComp"));
 const Gallery = lazy(() => import("../pages/gallery/Gallery"));
@@ -81,6 +83,16 @@ export const element = createBrowserRouter([
             {
                 index: true,
                 element: <AboutComp />
+            }
+        ]
+    },
+    {
+        path:"/csr",
+        element: <CsrLayout />,
+        children: [
+            {
+                index: true,
+                element: <CSR />
             }
         ]
     },
