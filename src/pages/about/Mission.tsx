@@ -166,9 +166,9 @@ const Mission = () => {
                   Be part of a community committed to making a difference
                 </p>
               </div>
-              <button className="bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold py-3 px-8 rounded-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              {/* <button className="bg-gradient-to-r from-orange-400 to-orange-500 text-white font-bold py-3 px-8 rounded-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Get Involved
-              </button>
+              </button> */}
             </div>
           </motion.div>
         </div>
