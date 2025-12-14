@@ -56,7 +56,7 @@ const OneBlog = () => {
 
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center items-center bg-white text-[#000000]">
         <div className="w-[90%] mt-[80px] md:mt-[100px] flex flex-col gap-4 relative">
             <NavLink to="/allblogs">
                 <h6 className="bg-[#ec0e0e] p-1 px-2 text-white text-[13px] w-[100px] text-center flex items-center justify-center gap-2"><span><FaArrowLeftLong /></span>Blog</h6>
@@ -81,7 +81,7 @@ const OneBlog = () => {
                 </div>
 
                 <h5 className="text-[11px] md:text-[13px] lg:text-[14px] text-justify w-full lg:w-[70%]">
-                    {/* Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, corrupti! Minima ab placeat provident inventore quidem rerum aliquid dolores debitis? Ratione, provident? Accusamus incidunt optio assumenda aut id aperiam veritatis, delectus itaque. Repellendus facere sunt modi, hic sapiente aspernatur aperiam. Fugiat in aspernatur officiis velit obcaecati minus dolores repudiandae illum, deserunt architecto aliquam commodi facilis, distinctio aliquid recusandae molestias non, iure esse ex unde dolorum nobis! Officiis sunt eaque, magnam ut optio natus rerum asperiores ea soluta, doloremque maiores odit, nesciunt ipsum suscipit voluptatum porro eligendi dignissimos perspiciatis assumenda nisi laudantium molestiae. Debitis sed maxime officia distinctio dolorum assumenda alias voluptatibus tenetur, corrupti ducimus. Dicta recusandae quam earum incidunt a dolorum, ratione odit? Ipsa ut culpa esse numquam saepe voluptatibus cum iure velit at! Iusto error obcaecati repellat quia aliquam atque, assumenda, unde non hic ratione veritatis? Architecto magni qui, dignissimos aliquid dolores ipsum repellendus odit culpa quia voluptas perspiciatis pariatur tempore modi, vitae in ad amet ea animi maxime quis rerum? Ea quae aspernatur possimus molestiae odio. Voluptatum accusamus obcaecati deleniti, dolores, aperiam voluptate velit eum nam natus iusto suscipit non quaerat assumenda quidem fugiat, nisi blanditiis consectetur odio maxime dicta! Enim incidunt nihil tempora laborum sit odit similique numquam dolore, quasi unde doloribus aspernatur ipsam at nobis distinctio veritatis nisi rerum perferendis eos! Dignissimos illo, assumenda quos magni, iusto, repellendus earum esse quas cupiditate eaque atque ea quibusdam nam fuga voluptate doloremque maiores commodi deserunt quasi neque odit ad delectus veniam animi! Esse asperiores minima aliquam at ab, voluptas recusandae soluta magnam totam dolores a delectus quisquam, possimus, animi ipsum aperiam quam laboriosam iusto exercitationem consectetur alias? Dicta ipsam fugit nobis sunt non atque adipisci aperiam laborum voluptas quisquam ut, sapiente dignissimos, obcaecati id esse, inventore beatae ea eaque repellendus culpa impedit exercitationem. Id hic non odio aspernatur. */}
+                   
                     {blog?.details}
                 </h5>
             </div>
