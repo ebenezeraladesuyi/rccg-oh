@@ -239,7 +239,7 @@ const FirstTimer = () => {
                                                 value={formData.name}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="John Smith"
                                             />
                                         </div>
@@ -255,7 +255,7 @@ const FirstTimer = () => {
                                                 value={formData.address}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="Street Address"
                                             />
                                         </div>
@@ -271,7 +271,7 @@ const FirstTimer = () => {
                                                 value={formData.county}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="County"
                                             />
                                         </div>
@@ -287,7 +287,7 @@ const FirstTimer = () => {
                                                 value={formData.occupation}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="Your profession"
                                             />
                                         </div>
@@ -319,7 +319,7 @@ const FirstTimer = () => {
                                                 name="telHome"
                                                 value={formData.telHome}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="Home phone number"
                                             />
                                         </div>
@@ -334,7 +334,7 @@ const FirstTimer = () => {
                                                 name="telWork"
                                                 value={formData.telWork}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="Work phone number"
                                             />
                                         </div>
@@ -350,7 +350,7 @@ const FirstTimer = () => {
                                                 value={formData.mobile}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="Mobile number"
                                             />
                                         </div>
@@ -366,7 +366,7 @@ const FirstTimer = () => {
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]"
                                                 placeholder="your@email.com"
                                             />
                                         </div>
@@ -397,7 +397,7 @@ const FirstTimer = () => {
                                                 value={formData.visitOrStay}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 appearance-none bg-white"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 appearance-none bg-white text-[#000000]"
                                             >
                                                 <option value="">Select an option</option>
                                                 <option value="Visiting">Just visiting today</option>
@@ -415,7 +415,7 @@ const FirstTimer = () => {
                                                 value={formData.prayerRequest}
                                                 onChange={handleChange}
                                                 rows={4}
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 resize-none"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 resize-none bg-[#ffffff] text-[#000000]"
                                                 placeholder="Share any prayer requests or areas where you need support..."
                                             />
                                         </div>
@@ -429,7 +429,7 @@ const FirstTimer = () => {
                                                 value={formData.haveJesus}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 appearance-none bg-white"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 appearance-none bg-white text-[#000000]"
                                             >
                                                 <option value="">Select an option</option>
                                                 <option value="Yes">Yes, I have</option>
@@ -447,7 +447,7 @@ const FirstTimer = () => {
                                                 value={formData.pastorVisit}
                                                 onChange={handleChange}
                                                 required
-                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 appearance-none bg-white"
+                                                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#23a1db] focus:ring-2 focus:ring-[#23a1db]/20 outline-none transition-all duration-300 appearance-none bg-white text-[#000000]"
                                             >
                                                 <option value="">Select an option</option>
                                                 <option value="Yes">Yes, I'd appreciate a visit</option>
