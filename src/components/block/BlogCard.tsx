@@ -14,7 +14,7 @@ interface iBlogCard {
 
 const BlogCard:React.FC<iBlogCard> = ({pic, author, title, details, date}) => {
   return (
-    <div className='w-[275px] h-[400px] bg-white flex flex-col gap-2  mr-[6px ml-[6px shadow-md rounded-md overflow-hidden mb-[10px]'>
+    <div className='w-[275px] h-[400px] bg-whit flex flex-col gap-2  mr-[6px ml-[6px shadow-md rounded-md overflow-hidden mb-[10px] bg-[#ffffff]'>
         <div className='w-full h-[50%]'>
             <img className='h-full w-full' src={pic} alt="" />
         </div>

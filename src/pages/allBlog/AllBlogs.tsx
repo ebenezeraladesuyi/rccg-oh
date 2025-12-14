@@ -92,6 +92,7 @@ const AllBlogs = () => {
 
                                 <h5 className="text-justify text-[11px] lg:text-[13px]">
                                     {/* Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, ipsa totam excepturi qui tempora sapiente neque. Eaque provident dolore accusamus aliquam sapiente debitis obcaecati eos... */}
+                                    console.log("blog" ,{blog?.details.slice(0, 250)}...)
                                     {blog?.details.slice(0, 250)}...
                                 </h5>
 
