@@ -30,7 +30,7 @@ const BlogCard:React.FC<iBlogCard> = ({pic, author, title, details, date}) => {
                 {title}
             </h5>
 
-            <h6 className='text-[10px] text-justify'>
+            <h6 className='text-[10px] text-justify  text-[#000000]'>
                 {/* Looking around and admiring the wonders of nature, animals, plants, food crops, birds, fishes all existing in their kinds and the rich diversity of the universe one can't help but… */}
                 {details}...
             </h6>

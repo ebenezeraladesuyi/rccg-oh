@@ -90,9 +90,8 @@ const AllBlogs = () => {
                                     <h5 className="text-[#bab9c1] flex items-center gap-1"> <span className='text-[12px]'><FaRegCalendarCheck /></span> {blog?.createdAt.slice(0, 10)} <span className='text-[12px]'><IoTimeOutline /></span>{blog?.createdAt.slice(11, 16)}</h5>
                                 </div>
 
-                                <h5 className="text-justify text-[11px] lg:text-[13px]">
+                                <h5 className="text-justify text-[11px] lg:text-[13px] text-[#000000]">
                                     {/* Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, ipsa totam excepturi qui tempora sapiente neque. Eaque provident dolore accusamus aliquam sapiente debitis obcaecati eos... */}
-                                    console.log("blog" ,{blog?.details.slice(0, 250)}...)
                                     {blog?.details.slice(0, 250)}...
                                 </h5>
 
