@@ -1,13 +1,30 @@
-
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
 import 'swiper/swiper-bundle.css';
 
-// Using the same icons as Hero.tsx for consistency
+// Import your CSR images
+import csr1 from "../../assets/csr-images/csr1.jpeg";
+import csr2 from "../../assets/csr-images/csr2.jpeg";
+import csr3 from "../../assets/csr-images/csr3.jpeg";
+import csr4 from "../../assets/csr-images/csr4.jpeg";
+import csr5 from "../../assets/csr-images/csr5.jpeg";
+import csr6 from "../../assets/csr-images/csr6.jpeg";
+import csr7 from "../../assets/csr-images/csr7.jpeg";
+import csr8 from "../../assets/csr-images/csr8.jpeg";
+import csr9 from "../../assets/csr-images/csr9.jpeg";
+import csr10 from "../../assets/csr-images/csr10.jpeg";
+import csr11 from "../../assets/csr-images/csr11.jpeg";
+import csr12 from "../../assets/csr-images/csr12.jpeg";
+import csr13 from "../../assets/csr-images/csr13.jpeg";
+import csr14 from "../../assets/csr-images/csr14.jpeg";
+import csr15 from "../../assets/csr-images/csr15.jpeg";
+import csr16 from "../../assets/csr-images/csr16.jpeg";
+import csr17 from "../../assets/csr-images/csr17.jpeg";
+import csr18 from "../../assets/csr-images/csr18.jpeg";
+import csr19 from "../../assets/csr-images/csr19.jpeg";
+
+// Import icons
 import { FaFacebookSquare, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 
@@ -19,17 +36,46 @@ const CSR = () => {
     "We plan to build strong, supportive communities through our Foodbank fostering relationships that promote peace, love, and cooperation in our local community. An initiative that creates stronger ties between individuals and groups."
   ];
 
+  // Carousel images (first 6 images for the main carousel)
+  const carouselImages = [
+    { src: csr1, title: "", description: "" },
+    { src: csr2, title: "" },
+    { src: csr3, title: "", description: "S" },
+    { src: csr4, title: "", description: "" },
+    { src: csr5, title: "", description: "" },
+    { src: csr6, title: "", description: "" }
+  ];
+
+  // Grid images (next 12 images for the gallery grid)
+  const gridImages = [
+    { src: csr7, title: "" },
+    { src: csr8, title: "" },
+    { src: csr9, title: " " },
+    { src: csr10, title: " " },
+    { src: csr11, title: " " },
+    { src: csr12, title: " " },
+    { src: csr13, title: " " },
+    { src: csr14, title: " " },
+    { src: csr15, title: " " },
+    { src: csr16, title: "" },
+    { src: csr17, title: " " },
+    { src: csr18, title: " " },
+    // csr19 can be used as backup or in the hero section
+  ];
+
+  // Hero background image (using csr19 for the hero)
+  const heroImage = csr19;
+
   return (
     <div className="w-full min-h-screen bg-white font-pop">
       {/* Hero Section */}
       <motion.div 
-        className="w-full h-[60vh] bg-hero-bg bg-center bg-cover flex justify-center items-center relative"
+        className="w-full h-[60vh] bg-center bg-cover flex justify-center items-center relative"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${heroImage})` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="absolute bg-black h-full w-full top-0 left-0 opacity-60"></div>
-        
         <motion.div 
           className="z-30 text-white text-center px-4"
           initial={{ y: 50, opacity: 0 }}
@@ -83,20 +129,20 @@ const CSR = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-xl"
           >
-            {[...Array(6)].map((_, index) => (
+            {carouselImages.map((image, index) => (
               <SwiperSlide key={index}>
                 <div 
-                  className="w-full h-full bg-hero-bg bg-center bg-cover flex items-end p-8"
+                  className="w-full h-full bg-cover bg-center flex items-end p-8"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-${1515378791036 + index}?auto=format&fit=crop&w=1920')`
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${image.src})`
                   }}
                 >
                   <div className="text-white">
                     <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                      Serving Our Community {index + 1}
+                      {image.title}
                     </h3>
                     <p className="text-lg opacity-90">
-                      Showing God's love through practical actions
+                      {image.description}
                     </p>
                   </div>
                 </div>
@@ -147,7 +193,7 @@ const CSR = () => {
           </h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(6)].map((_, index) => (
+            {gridImages.map((image, index) => (
               <motion.div 
                 key={index}
                 className="relative rounded-xl overflow-hidden shadow-lg h-64"
@@ -157,36 +203,87 @@ const CSR = () => {
                 <div 
                   className="w-full h-full bg-cover bg-center"
                   style={{
-                    backgroundImage: `linear-gradient(rgba(40, 22, 111, 0.3), rgba(40, 22, 111, 0.3)), url('https://images.unsplash.com/photo-${1515378791036 + index + 6}?auto=format&fit=crop&w=800')`
+                    backgroundImage: `linear-gradient(rgba(40, 22, 111, 0.3), rgba(40, 22, 111, 0.3)), url(${image.src})`
                   }}
                 >
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                     <h3 className="text-white text-lg font-semibold">
-                      Community Service {index + 1}
+                      {image.title}
                     </h3>
+                    <p className="text-white/80 text-sm mt-1">
+                      {/* Showing God's love in practical ways */}
+                    </p>
                   </div>
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* If you want to use all 19 images, you can add another row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {/* You can add more images here if needed */}
+          </div>
+        </motion.div>
+
+        {/* Stats Section (Optional - using remaining images as background) */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div 
+              className="rounded-xl p-8 text-white relative overflow-hidden h-64"
+              style={{ backgroundImage: `linear-gradient(rgba(40, 22, 111, 0.8), rgba(40, 22, 111, 0.8)), url(${csr16})` }}
+            >
+              <div className="relative z-10">
+                <h3 className="text-4xl font-bold mb-2">100+</h3>
+                <p className="text-lg">Families Supported Weekly</p>
+              </div>
+            </div>
+            
+            <div 
+              className="rounded-xl p-8 text-white relative overflow-hidden h-64"
+              style={{ backgroundImage: `linear-gradient(rgba(40, 22, 111, 0.8), rgba(40, 22, 111, 0.8)), url(${csr17})` }}
+            >
+              <div className="relative z-10">
+                <h3 className="text-4xl font-bold mb-2">50+</h3>
+                <p className="text-lg">Active Volunteers</p>
+              </div>
+            </div>
+            
+            <div 
+              className="rounded-xl p-8 text-white relative overflow-hidden h-64"
+              style={{ backgroundImage: `linear-gradient(rgba(40, 22, 111, 0.8), rgba(40, 22, 111, 0.8)), url(${csr18})` }}
+            >
+              <div className="relative z-10">
+                <h3 className="text-4xl font-bold mb-2">12+</h3>
+                <p className="text-lg">Community Programs</p>
+              </div>
+            </div>
           </div>
         </motion.div>
 
         {/* Conclusion */}
         <motion.div 
           className="bg-gradient-to-r from-[#28166f] to-[#3a2a8a] rounded-2xl p-8 md:p-12 text-white text-center mb-12"
+          style={{ backgroundImage: `linear-gradient(rgba(40, 22, 111, 0.9), rgba(40, 22, 111, 0.9)), url(${csr19})` }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.3 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Our Commitment
-          </h2>
-          <p className="text-lg md:text-xl mb-6 opacity-95">
-            CSR is an outward expression of love, kindness rooted in biblical principles.
-          </p>
-          <p className="text-2xl font-bold">
-            God helping us.
-          </p>
+          <div className="relative z-10">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Our Commitment
+            </h2>
+            <p className="text-lg md:text-xl mb-6 opacity-95">
+              CSR is an outward expression of love, kindness rooted in biblical principles.
+            </p>
+            <p className="text-2xl font-bold">
+              God helping us.
+            </p>
+          </div>
         </motion.div>
 
         {/* Social Media Links */}
