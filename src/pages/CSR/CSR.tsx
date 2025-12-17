@@ -25,8 +25,8 @@ import csr18 from "../../assets/csr-images/csr18.jpeg";
 import csr19 from "../../assets/csr-images/csr19.jpeg";
 
 // Import icons
-import { FaFacebookSquare, FaTwitter, FaYoutube } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
+// import { FaFacebookSquare, FaTwitter, FaYoutube } from "react-icons/fa";
+// import { FaSquareInstagram } from "react-icons/fa6";
 
 const CSR = () => {
   const csrPoints = [
@@ -293,7 +293,7 @@ const CSR = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6">
+          {/* <h3 className="text-2xl font-bold text-gray-800 mb-6">
             Follow Our Journey
           </h3>
           <div className="flex justify-center gap-6">
@@ -329,9 +329,10 @@ const CSR = () => {
             >
               <FaYoutube />
             </motion.a>
-          </div>
+          </div> */}
           <p className="text-gray-600 mt-6">
             Join us in making a difference in our community
+            <br /><span className="text-[#9e9c9c]">Contact Us:</span> csr@rccgopenheavens.com
           </p>
         </motion.div>
       </div>

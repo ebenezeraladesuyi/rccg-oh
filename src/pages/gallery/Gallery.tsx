@@ -56,7 +56,7 @@ const Gallery = () => {
 
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center gap-6 py-[30px]">
+    <div className="w-full min-h-screen flex flex-col items-center gap-6 py-[30px] bg[#ffffff]">
         
         <div className="w-full h-[50vh] flex flex-col justify-center items-center shadow-m gap-3">
             <h5 className="text-[30px] font-bold text-[#23a1db]">OUR GALLERY</h5>
