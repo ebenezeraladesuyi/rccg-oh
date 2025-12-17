@@ -10,7 +10,7 @@ import FirstTimerLayout from "../layout/FirstTimerLayout";
 import AboutLayout from "../layout/AboutLayout";
 import PaymentLayout from "../layout/PaymentLayout";
 import CsrLayout from "../layout/CsrLayout";
-import CSR from "../pages/CSR/CSR";
+import BookingsLayout from "../layout/BookingsLayout";
 
 const HomeComp = lazy(() => import("../pages/home/HomeComp"));
 const Gallery = lazy(() => import("../pages/gallery/Gallery"));
@@ -19,6 +19,8 @@ const OneBlog = lazy(() => import("../pages/oneBlog/OneBlog"));
 const FirstTimer = lazy(() => import("../pages/firstTimer/FirstTimer"));
 const AboutComp = lazy(() => import("../pages/about/AboutComp"));
 const Payment = lazy(() => import("../pages/payment/Payment"));
+const CSR = lazy(() => import("../pages/CSR/CSR"));
+const Bookings = lazy(() => import("../pages/booking/Bookings"));
 
 
 export const element = createBrowserRouter([
@@ -103,6 +105,16 @@ export const element = createBrowserRouter([
             {
                 index: true,
                 element: <Payment />
+            }
+        ]
+    },
+    {
+        path:"/bookings",
+        element: <BookingsLayout />,
+        children: [
+            {
+                index: true,
+                element: <Bookings />
             }
         ]
     },

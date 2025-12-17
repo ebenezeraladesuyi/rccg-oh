@@ -1,7 +1,5 @@
-// import React from 'react'
 
 import logo from "../../assets/images/Rccg_logo.png";
-// import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaFacebookSquare, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 
@@ -20,13 +18,11 @@ const Footer = () => {
               <img className="w-full" src={logo} alt="" />
             </div>
 
-          {/* <h6 className="text-[12px] md:text-[15px] text-justify text-[#50519f]">
-            Volatic Academy. We are a supportive and inclusive Academy, where every student is inspired to dream big, while challenging them and the status quo, equipping them with business skill, technology skills, leadership skills and life skills.
-          </h6> */}
-
             <h5 className="text-[11px] lg:text-[14px] text-cente mb-[0px] flex flex-col text-[#28166f]">
               <span className="text-[#33a866]">Address:</span>220/21 Lee Rd, Dublin Industrial Estate, Glasnevin Dublin 11, Ireland,
-              Eircode:D11PX89.  <span className="text-[#33a866]">Phone:</span> +353 (0) 87-416-0229 <span className="text-[#33a866]">Email:</span>  info@rccgopenheavens.com ; rccgopenheavensdub@yahoo.com
+              Eircode:D11PX89.  <span className="text-[#33a866]">Phone:</span> +353 (0) 87-416-0229 <span className="text-[#33a866]">Email:</span>  
+              {/* info@rccgopenheavens.com ; rccgopenheavensdub@yahoo.com */}
+              info@rccgopeneheavens.com
             </h5> 
           </div>
 
@@ -73,7 +69,8 @@ const Footer = () => {
 
       <div className="bg-[#28166f] py-5 w-full flex items-center justify-center z-20">
         <h5 className="text-[12px] md:text-[15px] text-white mt-[30px w-[90%] text-center">
-          Copyright &#169; 2024 RCCG OPEN HEAVENS, DUBLIN
+          Copyright &#169; 2024 RCCG OPEN HEAVENS CLG, DUBLIN. 
+          <br/><span className="text-[#e9e108]">20066789 (RCN)</span>
         </h5>
       </div>
     </div>
