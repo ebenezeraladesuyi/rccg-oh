@@ -41,17 +41,19 @@ const OneBlog = () => {
     }, [id]);
 
     if (loading) {
-        return 
+        return (
         <div className="w-full flex justify-center items-center">
             <DatasIsaLoading />
-        </div>;
+        </div>
+        )
     }
 
     if (!blog) {
-        return 
+        return (
             <div className="w-full justify-center items-center text-[25px] font-bold">
                 Blog Not Found
             </div>
+        )
     }
 
 
