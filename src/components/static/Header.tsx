@@ -52,9 +52,9 @@ const Header = () => {
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Gallery</ol>
                             </NavLink>
 
-                            <NavLink to='/allblogs'>
+                            {/* <NavLink to='/allblogs'>
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Blog</ol>
-                            </NavLink>
+                            </NavLink> */}
 
                             <NavLink to='/firsttimer'>
                                 <ol className='text-[#28166f] hover:text-[#040404 cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>First Timers</ol>
@@ -117,9 +117,9 @@ const Header = () => {
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Gallery</ol>
                         </NavLink>
 
-                        <NavLink to='/allblogs'>
+                        {/* <NavLink to='/allblogs'>
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Blog</ol>
-                        </NavLink>
+                        </NavLink> */}
 
                         <NavLink to='/firsttimer'>
                             <ol className='text-white  hover:text-[#eedfb0] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>First Timer</ol>

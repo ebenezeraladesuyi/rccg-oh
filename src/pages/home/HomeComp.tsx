@@ -2,7 +2,7 @@
 
 // import Hero from "./Hero"
 import Believe from "./Believe"
-import Blog from "./Blog"
+// import Blog from "./Blog"
 import HeroPage from "./HeroPage"
 import HomeGallery from "./HomeGallery"
 import Prayer from "./Prayer"
@@ -15,7 +15,7 @@ const HomeComp = () => {
         <Prayer />
         <HomeGallery />
         <Believe />
-        <Blog />
+        {/* <Blog /> */}
         <Service />
     </div>
   )
