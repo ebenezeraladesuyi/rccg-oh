@@ -61,28 +61,36 @@ const HeroPage: React.FC = () => {
                     <motion.h5 className="md:hidde"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1.4 }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
                     >RCCG</motion.h5>
 
                     <div className="flex flex-col md:flex-row items-center gap-">
                         <motion.h5 className="" 
                             initial={{ opacity: 0, y: -50 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.7 }}
+                            transition={{ duration: 0.8, delay: 1.0 }}
                         >OPEN &nbsp;</motion.h5>
 
                         <motion.h5 className=""
                             initial={{ opacity: 0, y: -50 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1.0 }}
+                            transition={{ duration: 0.8, delay: 1.4 }}
                         >HEAVENS</motion.h5>
+
+                        <br />
+
+                        <motion.h5 className=""
+                            initial={{ opacity: 0, y: -50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.7 }}
+                        >DUBLIN</motion.h5>
                     </div>
                 {/* </div> */}
 
                 <motion.h6 className="text-white font-bol text-[12px] md:text-[16px] md:w-[60%] lg:w-[55% leading-[18px] md:leading-[25px]"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1.7 }}
+                        transition={{ duration: 0.8, delay: 1.9 }}
                 >
                     ...Where God's word empower our vibrant church of destiny, with Prayer & Fasting.
                 </motion.h6>
@@ -91,7 +99,7 @@ const HeroPage: React.FC = () => {
             <motion.button className="w-[150px] md:w-[200px] py-2 bg-[#4cb278] text-white rounded-lg text-[15px] md:text-[18px] animate-pulse"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1.9 }}
+                    transition={{ duration: 0.8, delay: 2.2 }}
             >
                 About Us
             </motion.button>
@@ -100,28 +108,28 @@ const HeroPage: React.FC = () => {
                 <motion.a href="" className="text-white text-[20px] md:text-[30px]"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 2.2 }}
+                    transition={{ duration: 0.8, delay: 2.5 }}
             >
                     <FaSquareInstagram />
                 </motion.a>
                 <motion.a href="" className="text-white text-[20px] md:text-[30px]"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 2.5 }}
+                    transition={{ duration: 0.8, delay: 2.8 }}
             >
                     <FaFacebookSquare />
                 </motion.a>
                 <motion.a href="" className="text-white text-[20px] md:text-[30px]"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 2.8 }}
+                    transition={{ duration: 0.8, delay: 3.1 }}
             >
                     <FaTwitter />
                 </motion.a>
                 <motion.a href="" className="text-white text-[20px] md:text-[30px] "
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 3.1 }}
+                    transition={{ duration: 0.8, delay: 3.4 }}
             >
                     <FaYoutube />
                 </motion.a>
