@@ -75,9 +75,9 @@ const HeroPage: React.FC = () => {
                             initial={{ opacity: 0, y: -50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 1.4 }}
-                        >HEAVENS</motion.h5>
+                        >HEAVENS, </motion.h5>
 
-                        <br />
+                        {/* <br /> */}
 
                         <motion.h5 className=""
                             initial={{ opacity: 0, y: -50 }}
