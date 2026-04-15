@@ -38,7 +38,7 @@ const Header = () => {
 
                 <div className='lg:bg-whit lg:bg-opacity-4 rounded-[30px] lg:shadow-m py-1 p-3'>
                     <li className="hidden lg:flex items-center gap-7 text-[15px] transition-all duration-500 ease-in-out">
-                        <div className='flex items-center gap-7 bg-white px-4 py-2 rounded-[15px] shadow-md'>
+                        <div className='flex items-center gap-7 bg-white px-4 py-3 rounded-[15px] shadow-md'>
                             <NavLink to="/">
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Home</ol>
                             </NavLink>
@@ -67,6 +67,11 @@ const Header = () => {
                             {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
                             <NavLink to='/contact'>
                                 <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Contact Us</ol>
+                            </NavLink>
+
+                            
+                            <NavLink to='/bookings'>
+                                <ol className='text-[#28166f] hover:text-[#23a1db cursor-pointer font-semibold transition-all duration-300 ease-in-out hover:border-b-[#28166f] hover:border-b-[1px]'>Book Our Facility</ol>
                             </NavLink>
                         </div>
 
@@ -132,6 +137,11 @@ const Header = () => {
                         {/* <Link offset={-100} smooth={true} duration={500} to="contact"> */}
                         <NavLink to='/contact'>
                             <ol className='text-white  hover:text-[#eedfb0s] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Contact Us</ol>
+                        </NavLink>
+
+
+                        <NavLink to='/bookings'>
+                            <ol className='text-white  hover:text-[#eedfb0s] cursor-pointer font-semibold transition-all duration-300 ease-in-out'>Book Our Facility</ol>
                         </NavLink>
 
                         <NavLink to="/payment">

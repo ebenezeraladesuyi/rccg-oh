@@ -12,7 +12,9 @@ import {
   FaHandshake,
   FaSpinner,
   FaCheckCircle,
-  FaExclamationTriangle
+  FaExclamationTriangle,
+  FaChevronRight,
+  FaChevronLeft
 } from 'react-icons/fa'
 import axios from 'axios'
 import { url } from '../../api/Api'
@@ -40,6 +42,15 @@ const Bookings = () => {
     details?: string[];
   } | null>(null)
 
+  // Date picker state
+  const [showDatePicker, setShowDatePicker] = useState(false)
+  const [currentMonth, setCurrentMonth] = useState(new Date())
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+
+  // Time picker states
+  const [showStartTimePicker, setShowStartTimePicker] = useState(false)
+  const [showEndTimePicker, setShowEndTimePicker] = useState(false)
+
   const showToast = (
     type: 'success' | 'error' | 'info',
     title: string,
@@ -57,6 +68,144 @@ const Bookings = () => {
 
   const hideToast = () => {
     setToast(null)
+  }
+
+  // Date picker helpers
+  const getDaysInMonth = (date: Date) => {
+    const year = date.getFullYear()
+    const month = date.getMonth()
+    const firstDay = new Date(year, month, 1)
+    const lastDay = new Date(year, month + 1, 0)
+    const daysInMonth = lastDay.getDate()
+    const startingDayOfWeek = firstDay.getDay()
+    
+    return { daysInMonth, startingDayOfWeek }
+  }
+
+  const isDateDisabled = (date: Date) => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    return date < today
+  }
+
+  const isDateSelected = (date: Date) => {
+    if (!selectedDate) return false
+    return date.toDateString() === selectedDate.toDateString()
+  }
+
+  const handleDateSelect = (date: Date) => {
+    if (isDateDisabled(date)) return
+    setSelectedDate(date)
+    const year = date.getFullYear()
+    const month = String(date.getMonth() + 1).padStart(2, '0')
+    const day = String(date.getDate()).padStart(2, '0')
+    const formattedDate = `${year}-${month}-${day}`
+    setFormData(prev => ({ ...prev, proposedDate: formattedDate }))
+    setShowDatePicker(false)
+    
+    if (errors.proposedDate) {
+      setErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors.proposedDate
+        return newErrors
+      })
+    }
+  }
+
+  const changeMonth = (increment: number) => {
+    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + increment, 1))
+  }
+
+  const renderCalendar = () => {
+    const { daysInMonth, startingDayOfWeek } = getDaysInMonth(currentMonth)
+    const days = []
+    const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    
+    // Add weekday headers
+    for (let i = 0; i < 7; i++) {
+      days.push(
+        <div key={`header-${i}`} className="text-center text-xs font-semibold text-gray-500 py-2">
+          {weekdays[i]}
+        </div>
+      )
+    }
+    
+    // Add empty cells for days before month starts
+    for (let i = 0; i < startingDayOfWeek; i++) {
+      days.push(<div key={`empty-${i}`} className="h-10"></div>)
+    }
+    
+    // Add days of the month
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day)
+      const isDisabled = isDateDisabled(date)
+      const isSelected = isDateSelected(date)
+      
+      days.push(
+        <button
+          key={`day-${day}`}
+          onClick={() => handleDateSelect(date)}
+          disabled={isDisabled}
+          className={`
+            h-10 w-full rounded-lg text-sm font-medium transition-all duration-200
+            ${isDisabled 
+              ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+              : isSelected
+              ? 'bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-[#ffffff] shadow-md'
+              : 'hover:bg-[#28166f]/10 text-[#ffffff]'
+            }
+          `}
+        >
+          {day}
+        </button>
+      )
+    }
+    
+    return days
+  }
+
+  // Time picker helpers
+  const generateTimeSlots = () => {
+    const slots = []
+    for (let hour = 0; hour < 24; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        const hour12 = hour % 12 === 0 ? 12 : hour % 12
+        const ampm = hour < 12 ? 'AM' : 'PM'
+        const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+        const displayString = `${hour12}:${minute.toString().padStart(2, '0')} ${ampm}`
+        slots.push({ value: timeString, label: displayString })
+      }
+    }
+    return slots
+  }
+
+  const timeSlots = generateTimeSlots()
+
+  const handleTimeSelect = (time: string, field: 'eventStartTime' | 'eventEndTime') => {
+    setFormData(prev => ({ ...prev, [field]: time }))
+    
+    if (field === 'eventStartTime') {
+      setShowStartTimePicker(false)
+    } else {
+      setShowEndTimePicker(false)
+    }
+    
+    if (errors[field]) {
+      setErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors[field]
+        return newErrors
+      })
+    }
+  }
+
+  const formatTimeForDisplay = (time: string) => {
+    if (!time) return ''
+    const [hours, minutes] = time.split(':')
+    const hour = parseInt(hours)
+    const hour12 = hour % 12 === 0 ? 12 : hour % 12
+    const ampm = hour < 12 ? 'AM' : 'PM'
+    return `${hour12}:${minutes} ${ampm}`
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -303,7 +452,7 @@ const Bookings = () => {
       )}
       
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-white py-16 px-4">
+      <div className="bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-white py-20 md:py-24 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
@@ -317,7 +466,7 @@ const Bookings = () => {
               Book Our Facility
             </h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-              Host your special events at RCCG Open Heavens
+              Host your special events at RCCG Open Heavens Facility.
             </p>
           </motion.div>
         </div>
@@ -411,23 +560,65 @@ const Bookings = () => {
                     </div>
                   </div>
 
-                  {/* Proposed Date */}
-                  <div>
+                  {/* Proposed Date - Enhanced Date Picker */}
+                  <div className="relative">
                     <label className="bloc text-gray-700 font-medium mb-2 flex items-center gap-2">
                       <FaCalendarAlt className="text-[#28166f]" />
                       Proposed Date of Event *
                     </label>
-                    <input
-                      type="date"
-                      name="proposedDate"
-                      value={formData.proposedDate}
-                      onChange={handleChange}
-                      required
-                      min={new Date().toISOString().split('T')[0]}
-                      className={`w-full px-4 py-3 rounded-lg border ${
-                        errors.proposedDate ? 'border-red-500' : 'border-gray-300'
-                      } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]`}
-                    />
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={() => setShowDatePicker(!showDatePicker)}
+                        className={`w-full px-4 py-3 rounded-lg border ${
+                          errors.proposedDate ? 'border-red-500' : 'border-gray-300'
+                        } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-left flex items-center justify-between`}
+                      >
+                        <span className={formData.proposedDate ? 'text-[#000000]' : 'text-gray-400'}>
+                          {formData.proposedDate || 'Select a date'}
+                        </span>
+                        <FaCalendarAlt className="text-[#28166f]" />
+                      </button>
+                      
+                      {showDatePicker && (
+                        <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 w-full md:w-[350px] p-4">
+                          <div className="flex items-center justify-between mb-4">
+                            <button
+                              type="button"
+                              onClick={() => changeMonth(-1)}
+                              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                            >
+                              <FaChevronLeft className="text-gray-600" />
+                            </button>
+                            <h3 className="font-semibold text-gray-900">
+                              {currentMonth.toLocaleString('default', { month: 'long', year: 'numeric' })}
+                            </h3>
+                            <button
+                              type="button"
+                              onClick={() => changeMonth(1)}
+                              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                            >
+                              <FaChevronRight className="text-gray-600" />
+                            </button>
+                          </div>
+                          <div className="grid grid-cols-7 gap-1">
+                            {renderCalendar()}
+                          </div>
+                          <div className="mt-4 pt-3 border-t border-gray-200">
+                            <button
+                              type="button"
+                              onClick={() => setShowDatePicker(false)}
+                              className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+
+                  {/* Event Type */}
                     {errors.proposedDate && (
                       <p className="text-red-500 text-sm mt-1">{errors.proposedDate}</p>
                     )}
@@ -483,42 +674,112 @@ const Bookings = () => {
                   </div>
 
                   {/* Event Times */}
+                  {/* Event Times - Enhanced Time Pickers */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
+                    <div className="relative">
                       <label className="bloc text-gray-700 font-medium mb-2 flex items-center gap-2">
                         <FaClock className="text-[#28166f]" />
                         Event Start Time *
                       </label>
-                      <input
-                        type="time"
-                        name="eventStartTime"
-                        value={formData.eventStartTime}
-                        onChange={handleChange}
-                        required
-                        className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.eventStartTime ? 'border-red-500' : 'border-gray-300'
-                        } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]`}
-                      />
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowStartTimePicker(!showStartTimePicker)
+                            setShowEndTimePicker(false)
+                          }}
+                          className={`w-full px-4 py-3 rounded-lg border ${
+                            errors.eventStartTime ? 'border-red-500' : 'border-gray-300'
+                          } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-left flex items-center justify-between`}
+                        >
+                          <span className={formData.eventStartTime ? 'text-[#000000]' : 'text-gray-400'}>
+                            {formData.eventStartTime ? formatTimeForDisplay(formData.eventStartTime) : 'Select start time'}
+                          </span>
+                          <FaClock className="text-[#28166f]" />
+                        </button>
+                        
+                        {showStartTimePicker && (
+                          <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 w-full max-h-80 overflow-y-auto">
+                            <div className="sticky top-0 bg-white border-b border-gray-200 p-3">
+                              <h3 className="font-semibold text-gray-900">Select Start Time</h3>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2 p-3">
+                              {timeSlots.map((slot) => (
+                                <button
+                                  key={slot.value}
+                                  type="button"
+                                  onClick={() => handleTimeSelect(slot.value, 'eventStartTime')}
+                                  className={`px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
+                                    formData.eventStartTime === slot.value
+                                      ? 'bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-white'
+                                      : 'hover:bg-gray-100 text-[#ffffff]'
+                                  }`}
+                                >
+                                  {slot.label}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                       {errors.eventStartTime && (
                         <p className="text-red-500 text-sm mt-1">{errors.eventStartTime}</p>
                       )}
                     </div>
 
-                    <div>
+                    <div className="relative">
                       <label className="bloc text-gray-700 font-medium mb-2 flex items-center gap-2">
                         <FaClock className="text-[#28166f]" />
                         Event End Time *
                       </label>
-                      <input
-                        type="time"
-                        name="eventEndTime"
-                        value={formData.eventEndTime}
-                        onChange={handleChange}
-                        required
-                        className={`w-full px-4 py-3 rounded-lg border ${
-                          errors.eventEndTime ? 'border-red-500' : 'border-gray-300'
-                        } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]`}
-                      />
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowEndTimePicker(!showEndTimePicker)
+                            setShowStartTimePicker(false)
+                          }}
+                          className={`w-full px-4 py-3 rounded-lg border ${
+                            errors.eventEndTime ? 'border-red-500' : 'border-gray-300'
+                          } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-left flex items-center justify-between`}
+                        >
+                          <span className={formData.eventEndTime ? 'text-[#000000]' : 'text-gray-400'}>
+                            {formData.eventEndTime ? formatTimeForDisplay(formData.eventEndTime) : 'Select end time'}
+                          </span>
+                          <FaClock className="text-[#28166f]" />
+                        </button>
+                        
+                        {showEndTimePicker && (
+                          <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 w-full max-h-80 overflow-y-auto">
+                            <div className="sticky top-0 bg-white border-b border-gray-200 p-3">
+                              <h3 className="font-semibold text-gray-900">Select End Time</h3>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2 p-3">
+                              {timeSlots.map((slot) => (
+                                <button
+                                  key={slot.value}
+                                  type="button"
+                                  onClick={() => handleTimeSelect(slot.value, 'eventEndTime')}
+                                  // 
+                                  disabled={!!(formData.eventStartTime && slot.value <= formData.eventStartTime)}
+                                  className={`px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
+                                    formData.eventEndTime === slot.value
+                                      ? 'bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-white'
+                                      : formData.eventStartTime && slot.value <= formData.eventStartTime
+                                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                      : 'hover:bg-gray-100 text-[#ffffff]'
+                                  }`}
+                                >
+                                  {slot.label}
+                                  {formData.eventStartTime && slot.value <= formData.eventStartTime && (
+                                    <span className="text-xs ml-1">(invalid)</span>
+                                  )}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
                       {errors.eventEndTime && (
                         <p className="text-red-500 text-sm mt-1">{errors.eventEndTime}</p>
                       )}
