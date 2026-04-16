@@ -30,7 +30,8 @@ const Footer = () => {
             <h6 className="cursor-pointr mb-[0px] text-[14px] md:text-[16px] lg:text-[18px] font-bold md:mt-[20px text-[#33a866]">Service Schedule</h6>
             <h6 className="cursor-pointr">Sunday School: <span>9:30am</span></h6>
             <h6 className="cursor-pointr">Sunday Service: <span>10:00am - 12:00Noon</span></h6>
-            <h6 className="cursor-pointr">Tuesday: Digging Deep/Faith Clinic: <span>7:00pm - 9:00pm</span></h6>
+            <h6 className="cursor-pointr">Tuesday: Digging Deep/Faith Clinic: <span>7:00pm - 8:00pm</span></h6>
+            <h6 className="cursor-pointr">Young Adult Fellowship (YAF) Service:  <span>1pm every Sunday except First Sundays</span></h6>
             {/* <h6 className="cursor-pointe">Product Engineering</h6>
             <h6 className="cursor-pointr">Product Strategy</h6>
             <h6 className="cursor-pointr">Creative Design</h6>
