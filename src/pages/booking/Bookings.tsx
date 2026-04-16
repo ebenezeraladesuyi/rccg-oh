@@ -151,8 +151,8 @@ const Bookings = () => {
             ${isDisabled 
               ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
               : isSelected
-              ? 'bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-[#ffffff] shadow-md'
-              : 'hover:bg-[#28166f]/10 text-[#ffffff]'
+              ? 'bg-gradient-to-r  from-[#28166f] to-[#3a2a8a] text-[#ffffff] shadow-md'
+              : 'hover:bg-[#28166f] bg-[#7a1717] text-[#ffffff]'
             }
           `}
         >
@@ -239,7 +239,7 @@ const Bookings = () => {
     
     if (!formData.expectedGuests) newErrors.expectedGuests = 'Number of guests is required'
     else if (parseInt(formData.expectedGuests) < 1) newErrors.expectedGuests = 'At least 1 guest is required'
-    else if (parseInt(formData.expectedGuests) > 10000) newErrors.expectedGuests = 'Maximum 10,000 guests allowed'
+    else if (parseInt(formData.expectedGuests) > 10000) newErrors.expectedGuests = 'Maximum 300 guests allowed'
     
     if (!formData.eventStartTime) newErrors.eventStartTime = 'Start time is required'
     if (!formData.eventEndTime) newErrors.eventEndTime = 'End time is required'
@@ -552,7 +552,7 @@ const Bookings = () => {
                         className={`w-full px-4 py-3 rounded-lg border ${
                           errors.contactNumber ? 'border-red-500' : 'border-gray-300'
                         } focus:border-[#28166f] focus:ring-2 focus:ring-[#28166f]/20 outline-none transition-all duration-300 bg-[#ffffff] text-[#000000]`}
-                        placeholder="+353 87 416 0229"
+                        placeholder="87 416 0229 or +353 87 416 0229"
                       />
                       {errors.contactNumber && (
                         <p className="text-red-500 text-sm mt-1">{errors.contactNumber}</p>
@@ -712,7 +712,7 @@ const Bookings = () => {
                                   className={`px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
                                     formData.eventStartTime === slot.value
                                       ? 'bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-white'
-                                      : 'hover:bg-gray-100 text-[#ffffff]'
+                                      : 'hover:bg-[#000000] text-[#ffffff] bg-[#7a1717]'
                                   }`}
                                 >
                                   {slot.label}
@@ -766,8 +766,8 @@ const Bookings = () => {
                                     formData.eventEndTime === slot.value
                                       ? 'bg-gradient-to-r from-[#28166f] to-[#3a2a8a] text-white'
                                       : formData.eventStartTime && slot.value <= formData.eventStartTime
-                                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                      : 'hover:bg-gray-100 text-[#ffffff]'
+                                      ? 'bg-[#b6b6b8]  text-white'
+                                      : 'hover:bg-[#000000] text-[#ffffff] bg-[#7a1717]'
                                   }`}
                                 >
                                   {slot.label}
@@ -941,7 +941,7 @@ const Bookings = () => {
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600 text-sm">
-                      <strong>Phone:</strong> +353 (0) 87-416-0229
+                      {/* <strong>Phone:</strong> +353 (0) 87-416-0229 */}
                     </p>
                     <p className="text-gray-600 text-sm">
                       <strong>Email:</strong> building@rccgopenheavens.com
